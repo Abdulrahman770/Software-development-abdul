@@ -31,15 +31,7 @@ class Application(tk.Tk):
         frame = self.frames[cont]
         frame.tkraise()
 
-#
+
 app = Application()
 app.mainloop()
 
-
-# df = pd.read_csv('./data/data.csv')
-# # newId = Gen.ranGen()
-# ls = ["Tailor's Vila", "+1-5675595551", 'Paul', 'Ohio']
-# # df = pd.DataFrame([ls], columns=['name', 'contact', 'manager', 'location'])
-# dd = pd.DataFrame([ls], columns=['name', 'contact', 'manager', 'location'])
-# df = df.append(dd, ignore_index=True)
-# df.to_csv('./data/data.csv', index=False)

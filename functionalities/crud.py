@@ -17,12 +17,42 @@ class UserCrud:
     def updateThoroughfare(self):
         print()
 
+    def createProperties(self):
+        print()
 
+    def viewProperties(self):
+        print()
+
+    def updateProperties(self):
+        print()
+
+    def generateInvoice(self):
+        print()
+
+    def printInvoice(self):
+        print()
 
 class ManagerCrud(UserCrud):
     def __init__(self):
         self.userType = 2
 
+    def deleteThoroughfare(self):
+        print()
+
+    def deleteProperties(self):
+        print()
+
+    def deleteHousehold(self):
+        print()
+
+    def deleteHouseholdCustodian(self):
+        print()
+
+    def createUser(self):
+        print()
+
+    def viewTotalInvoice(self):
+        print()
 
 class AdminCrud(ManagerCrud):
     def __init__(self):

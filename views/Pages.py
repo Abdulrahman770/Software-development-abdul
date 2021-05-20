@@ -26,13 +26,6 @@ class StartPage(tk.Frame):
                            command=lambda: self.redirectUser(userIdInput.get()))
         button.pack(pady=30)
 
-        # button2 = tk.Button(self, text="Visit Page 2",
-        #                     command=lambda: controller.show_frame(ManagerPage))
-        # button2.pack()
-        #
-        # button3 = tk.Button(self, text="Visit Page 2",
-        #                     command=lambda: controller.show_frame(AdminPage))
-        # button3.pack()
 
     def redirectUser(self, userId):
         [b, t] = Authenticate.auth(userId)
@@ -50,30 +43,52 @@ class ManagerPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         self.controller = controller
-        label = tk.Label(self, text="User", font=LARGE_FONT)
+        label = tk.Label(self, text="Manager", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
-        l1 = tk.Label(self, text="Create Thoroughfare")
-        l1.pack(pady=10)
+        p1 = tk.Button(self, text="Create User", command= lambda: self.createUser())
+        p1.pack(pady=10)
 
-        lb1=tk.Label(self, text="Thoroughfare Type")
+        ll1 = tk.Label(self, text="Create Thoroughfare")
+        ll1.pack(pady=10)
+
+        lb1 = tk.Label(self, text="Thoroughfare Name")
         lb1.pack()
-        e1 = tk.Entry(self )
+        e1 = tk.Entry(self)
         e1.pack()
         lb2 = tk.Label(self, text="Thoroughfare Type")
         lb2.pack()
         e2 = tk.Entry(self)
         e2.pack()
         b1 = tk.Button(self, text="Add")
-        b1.pack()
+        b1.pack(pady=2)
 
         l2 = tk.Label(self, text="Create Properties")
         l2.pack(pady=10)
+        la = tk.Label(self, text="Address")
+        la.pack()
+        a = tk.Entry(self)
+        a.pack()
+        lo = tk.Label(self, text="Owner")
+        lo.pack()
+        o = tk.Entry(self)
+        o.pack()
+        lc = tk.Label(self, text="Completion Date")
+        lc.pack()
+        c = tk.Entry(self)
+        c.pack()
+
+        bb1 = tk.Button(self, text="Add")
+        bb1.pack(pady=2)
 
         l3 = tk.Label(self, text="Generate Invoice")
         l3.pack(pady=10)
 
-        l4 = tk.Label(self, text="Print Invoice")
+        l4 = tk.Button(self, text="Print Invoice")
         l4.pack(pady=10)
+
+    def createUser(self, estate):
+        if(type!="" or estate!=""):
+            ManagerCrud().createUser()
 
 
 
@@ -148,3 +163,42 @@ class UserPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         self.controller = controller
+        label = tk.Label(self, text="User", font=LARGE_FONT)
+        label.pack(pady=10, padx=10)
+        l1 = tk.Label(self, text="Create Thoroughfare")
+        l1.pack(pady=10)
+
+        lb1 = tk.Label(self, text="Thoroughfare Name")
+        lb1.pack()
+        e1 = tk.Entry(self)
+        e1.pack()
+        lb2 = tk.Label(self, text="Thoroughfare Type")
+        lb2.pack()
+        e2 = tk.Entry(self)
+        e2.pack()
+        b1 = tk.Button(self, text="Add")
+        b1.pack(pady=2)
+
+        l2 = tk.Label(self, text="Create Properties")
+        l2.pack(pady=10)
+        la = tk.Label(self, text="Address")
+        la.pack()
+        a = tk.Entry(self)
+        a.pack()
+        lo = tk.Label(self, text="Owner")
+        lo.pack()
+        o = tk.Entry(self)
+        o.pack()
+        lc = tk.Label(self, text="Completion Date")
+        lc.pack()
+        c = tk.Entry(self)
+        c.pack()
+
+        bb1 = tk.Button(self, text="Add")
+        bb1.pack(pady=2)
+
+        l3 = tk.Label(self, text="Generate Invoice")
+        l3.pack(pady=10)
+
+        l4 = tk.Button(self, text="Print Invoice")
+        l4.pack(pady=10)
